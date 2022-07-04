@@ -43,7 +43,6 @@ addBeats.addEventListener('click',()=>{
     beatsPerBar++;
     measureCount.textContent=beatsPerBar;
 })
-
 function updateMetronome(){
     tempoDisplay.textContent=bpm;
     tempoSlider.value=bpm;
