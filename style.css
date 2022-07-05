@@ -1,147 +1,167 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Ubuntu:wght@300&display=swap');
-*{
-    padding: 0;
-    margin: 0;
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Ubuntu:wght@300&display=swap");
+* {
+  padding: 0;
+  margin: 0;
 }
-body{
-    font-family: 'Raleway', sans-serif;
-    color: #525252;
-    user-select: none;
+body {
+  font-family: "Raleway", sans-serif;
+  color: #525252;
+  user-select: none;
 }
-.container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
-.metronome{
-    /* border: 1px solid black; */
-    display: flex;
-    flex-direction: column;
-    width: 300px;
-    height: 250px;
-    justify-content: space-between;
+.metronome {
+  /* border: 1px solid black; */
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 250px;
+  justify-content: space-between;
 }
-.bpm-display{
-    width: 100%;
-    text-align: center;
-    color: rgb(220, 93, 20);
-    font-weight: bold;
-}
-.bpm-display .tempo{
-    font-size: 4em;
-}
-.tempo-text{
-    font-size: .8em;
-    text-transform: uppercase;
-    text-align: center;
-}
-.tempo-settings{
-    display: flex;
-    justify-content: space-between;
-}
-.tempo-settings .adjust-tempo-btn{
-    width: 30px;
-    height: 30px;
-    font-size: 40px;
-    border-radius: 50%;
-    border: 1px solid #ddd;
-    text-align: center;
-    cursor: pointer;
-}
-.tempo-settings .adjust-tempo-btn:hover{
-    background-color: rgb(220, 93, 20);
-    color: wheat;
-}
-.tempo-settings .decrease-tempo{
-    line-height: 25px;
-}
-.tempo-settings .increase-tempo{
-    line-height: 32px;
+.counter {
+  width: 100%;
+  padding-bottom: 10px;
+  background: lighten(#333, 5%);
+  text-align: center;
 }
 
-input[type=range]{
-    -webkit-appearance: none;
-    background-color: transparent;
-    width: 70%;
+.dot {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin: 25px 10px 10px 10px;
+  border: 2px solid rgb(220, 93, 20);
+  background: rgb(255, 255, 255);
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s;
 }
-input[type=range]::-webkit-slider-thumb{
-    -webkit-appearance: none;
+.bpm-display {
+  width: 100%;
+  text-align: center;
+  color: rgb(220, 93, 20);
+  font-weight: bold;
 }
-input[type=range]:focus{
-    outline:none;
+.bpm-display .tempo {
+  font-size: 4em;
 }
-input[type=range]::-webkit-slider-thumb{
-    -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: #ff656c;
-    cursor: pointer;
-    margin-top: -8px;
+.tempo-text {
+  font-size: 0.8em;
+  text-transform: uppercase;
+  text-align: center;
 }
-input[type=range]::-moz-range-thumb {
-    -webkit-appearance: none;
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
-    background-color: #ff656c;
-    cursor: pointer;
-    border: none;
+.tempo-settings {
+  display: flex;
+  justify-content: space-between;
 }
-input[type=range]::-webkit-slider-runnable-track{
-    width: 100%;
-    height: 1px;
-    border-radius: 50%;
-    background-color: #ddd;
-    cursor: pointer;
+.tempo-settings .adjust-tempo-btn {
+  width: 30px;
+  height: 30px;
+  font-size: 40px;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+  text-align: center;
+  cursor: pointer;
 }
-input[type=range]::-moz-range-track {
-    width: 100%;
-    height: 1px;
-    border-radius: 50%;
-    background-color: #ddd;
-    cursor: pointer;
+.tempo-settings .adjust-tempo-btn:hover {
+  background-color: rgb(220, 93, 20);
+  color: wheat;
+}
+.tempo-settings .decrease-tempo {
+  line-height: 25px;
+}
+.tempo-settings .increase-tempo {
+  line-height: 32px;
 }
 
-.start-stop{
-    width: 50px;
-    height: 50px;
-     border: 0px; /*button border 0px not required if its div */
-    font-size: 0.7em;
-    text-align: center;
-    background: rgb(220, 93, 20);
-    border-radius: 50%;
-    color: wheat;
-    line-height: 50px;
-    margin: 0 auto;
-    cursor: pointer;
+input[type="range"] {
+  -webkit-appearance: none;
+  background-color: transparent;
+  width: 70%;
 }
-.start-stop:hover{
-    background-color: #ff656c;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
 }
-.mesaures{
-    display: flex;
-    justify-content: center;
+input[type="range"]:focus {
+  outline: none;
 }
-.mesaures .stepper{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 1px solid rgb(184, 176, 176);
-    text-align: center;
-    margin: 0 5px;
-    cursor: pointer;
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ff656c;
+  cursor: pointer;
+  margin-top: -8px;
 }
-.mesaures .stepper:hover{
-    background-color: #ff656c;
-    color: white;
+input[type="range"]::-moz-range-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: #ff656c;
+  cursor: pointer;
+  border: none;
 }
-.add-beats{
-    line-height: 20px;
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
 }
-.beats-per-bar-text{
-    text-align: center;
-    /* font-size: 0.5em; */
-    text-transform: uppercase;
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+}
+
+.start-stop {
+  width: 50px;
+  height: 50px;
+  border: 0px; /*button border 0px not required if its div */
+  font-size: 0.7em;
+  text-align: center;
+  background: rgb(220, 93, 20);
+  border-radius: 50%;
+  color: wheat;
+  line-height: 50px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.start-stop:hover {
+  background-color: #ff656c;
+}
+.mesaures {
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  margin-top: 15px;
+}
+.mesaures .stepper {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 1px solid rgb(184, 176, 176);
+  text-align: center;
+  margin: 0 5px;
+  cursor: pointer;
+}
+.mesaures .stepper:hover {
+  background-color: #ff656c;
+  color: white;
+}
+.add-beats {
+  line-height: 20px;
+}
+.beats-per-bar-text {
+  text-align: center;
+  /* font-size: 0.5em; */
+  text-transform: uppercase;
 }
