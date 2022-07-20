@@ -1,3 +1,6 @@
+
+import timer from "./timer.js";
+
 const tempoDisplay=document.querySelector('.tempo');
 const tempoText=document.querySelector('.tempo-text');
 const decreaseTempoBtn=document.querySelector('.decrease-tempo');
@@ -11,11 +14,12 @@ const measureCount=document.querySelector('.measure-count');
 const click1=new Audio('audios/click1.mp3');
 const click2=new Audio('audios/click2.mp3');
 
-// click1.play();
+// click2.play();
 
 
 let bpm=80;
 let beatsPerBar=4;
+let count= 0;
 let tempoTextName='Medium';
 
 decreaseTempoBtn.addEventListener('click',()=>{
@@ -49,6 +53,7 @@ addBeats.addEventListener('click',()=>{
     beatsPerBar++;
     measureCount.textContent=beatsPerBar;
 })
+
 function updateMetronome(){
     tempoDisplay.textContent=bpm;
     tempoSlider.value=bpm;
@@ -63,3 +68,21 @@ function updateMetronome(){
     if (bpm > 200) { tempoTextName = "Prestissimo" };
     tempoText.textContent=tempoTextName;
 }
+
+function playClick(){
+    if (count===beatsPerBar){
+        count=0;
+    }
+    
+    if(count===0){
+        click2.play();
+    }
+    else{
+        click2.play();
+    }
+    count++;
+}
+
+const metronome = timer(playClick, 60000/bpm, {immediate: true});
+
+metronome.start();

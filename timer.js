@@ -1,6 +1,7 @@
 // Add accurate timer constructor function
 
-function Timer(callback, timeInterval, options) {
+export default function timer(callback, timeInterval, options) {
+    const _this = this;
     this.timeInterval = timeInterval;
     
     // Add method to start timer
@@ -44,5 +45,3 @@ function Timer(callback, timeInterval, options) {
       this.timeout = setTimeout(this.round, this.timeInterval - drift);
     }
   }
-
-  export default Timer;
